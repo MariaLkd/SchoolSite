@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Trainer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+<script>
+    $.get("/navbar.html", function(data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("/footer.html", function(data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="container">
+        <br>
+        <h1>Contact Details</h1>
+        <br>
+        <ul class="contact_details">
+            <li id="phone"><img src="imgs/contact_icons/phone-28-16.png" alt="phone_icon"><a href="tel:+300123456789">+300123456789</a></li>
+            <li id="email">
+                <img src="imgs/contact_icons/new-post-16.png" alt="email_icon">
+                <a href="mailto:recever@gmail.com?subject=Hello!">companyname@compmany.com</a>
+            </li>
+            <li id="address">
+                <img src="/imgs/contact_icons/location-16.png" alt="location_icon"> Address
+            </li>
+        </ul>
+        <h3>Where to find us</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.8679504928136!2d23.729981116188895!3d37.98021087972261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd3bcaffff05%3A0x38743a758ebc088a!2sKorai%203%2C%20Athina%20105%2064!5e0!3m2!1sen!2sgr!4v1621810844481!5m2!1sen!2sgr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

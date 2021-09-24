@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+<script>
+    $.get("/navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("/footer.html", function (data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <br>
+    <div class="container">
+        <h1>Courses List</h1><br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Stream</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">End Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="title1">Title1</th>
+                    <th id="stream1">Stream1</th>
+                    <th id="type1">Type1</th>
+                    <th id="start_date1">00/00/0000</th>
+                    <th id="end_date1">00/00/0000</th>
+                    <th><button onclick="edit('course1')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="title2">Title2</th>
+                    <th id="stream2">Stream2</th>
+                    <th id="type2">Type2</th>
+                    <th id="start_date2">00/00/0000</th>
+                    <th id="end_date2">00/00/0000</th>
+                    <th><button onclick="edit('course2')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="title3">Title3</th>
+                    <th id="stream3">Stream3</th>
+                    <th id="type3">Type3</th>
+                    <th id="start_date3">00/00/0000</th>
+                    <th id="end_date3">00/00/0000</th>
+                    <th><button onclick="edit('course3')">edit</button></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container h3" id="editform">
+        <div id="edit_course1" style="display: none;">
+            <form class="add-form" id="course1_form" method="GET" onsubmit="alert('Course saved!');">
+                <br>
+                <h2>Editing Course 1</h2><br>
+                <div class="form-group">
+                    <label for="title">Title: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="title" placeholder="Title" required><br>
+                    <label for="stream">Stream: </label>
+                    <input type="text" class="form-control" name="stream" placeholder="Stream"><br>
+                    <label for="type">Type: </label>
+                    <input type="text" class="form-control" name="type" placeholder="Type"><br>
+                    <label for="start_date">Start Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" name="start_date" required><br>
+                    <label for="end_date">End Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" name="end_date" required><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('course1')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit_course2" style="display: none;">
+            <form class="add-form" id="course2_form" method="GET" onsubmit="alert('Course saved!');">
+                <br>
+                <h2>Editing Course 2</h2><br>
+                <div class="form-group">
+                    <label for="title">Title: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="title" placeholder="Title" required><br>
+                    <label for="stream">Stream: </label>
+                    <input type="text" class="form-control" name="stream" placeholder="Stream"><br>
+                    <label for="type">Type: </label>
+                    <input type="text" class="form-control" name="type" placeholder="Type"><br>
+                    <label for="start_date">Start Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" name="start_date" required><br>
+                    <label for="end_date">End Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" name="end_date" required><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('course2')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit_course3" style="display: none;">
+            <form class="add-form" id="course3_form" method="GET" onsubmit="alert('Course saved!');">
+                <br>
+                <h2>Editing Course 3</h2><br>
+                <div class="form-group">
+                    <label for="title">Title: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="title" placeholder="Title" required><br>
+                    <label for="stream">Stream: </label>
+                    <input type="text" class="form-control" name="stream" placeholder="Stream"><br>
+                    <label for="type">Type: </label>
+                    <input type="text" class="form-control" name="type" placeholder="Type"><br>
+                    <label for="start_date">Start Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" name="start_date" required><br>
+                    <label for="end_date">End Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" name="end_date" required><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('course3')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function edit(course) {
+        switch (course) {
+            case 'course1':
+                document.getElementById('edit_course1').style.display = "block";
+                break;
+            case 'course2':
+                document.getElementById('edit_course2').style.display = "block";
+                break;
+            case 'course3':
+                document.getElementById('edit_course3').style.display = "block";
+                break;
+        }
+    }
+
+    function cancel(courseEdit) {
+        switch (courseEdit) {
+            case 'course1':
+                document.getElementById('edit_course1').style.display = "none";
+                break;
+            case 'course2':
+                document.getElementById('edit_course2').style.display = "none";
+                break;
+            case 'course3':
+                document.getElementById('edit_course3').style.display = "none";
+                break;
+        }
+    }
+</script>
+
+</html>

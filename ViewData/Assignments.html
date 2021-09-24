@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+<script>
+    $.get("/navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("/footer.html", function (data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <br>
+    <div class="container">
+        <h1>Assignments List</h1><br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Submission Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="title1">Title1</th>
+                    <th id="description1">Description1</th>
+                    <th id="sub_date1">00/00/0000</th>
+                    <th><button onclick="edit('assignment1')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="title2">Title2</th>
+                    <th id="description2">Description2</th>
+                    <th id="sub_date2">00/00/0000</th>
+                    <th><button onclick="edit('assignment2')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="title3">Title3</th>
+                    <th id="description3">Description3</th>
+                    <th id="sub_date3">00/00/0000</th>
+                    <th><button onclick="edit('assignment3')">edit</button></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container h3" id="editform">
+        <div id="edit_assignment1" style="display: none;">
+            <form class="add-form" id="assignment1_form" method="GET" onsubmit="alert('Assignment saved!');">
+                <br>
+                <h2>Editing Assignment 1</h2><br>
+                <div class="form-group">
+                    <label for="title">Title: </label><span class="required">*</span>
+                    <input type="text" class="form-control" id="title" placeholder="Title" required><br>
+                    <label for="description">Description: </label>
+                    <input type="text" class="form-control" id="description" placeholder="Description"><br>
+                    <label for="sub_date">Submission Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" id="sub_date" required><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('assignment1')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit_assignment2" style="display: none;">
+            <form class="add-form" id="assignment2_form" method="GET" onsubmit="alert('Assignment saved!');">
+                <br>
+                <h2>Editing Assignment 2</h2><br>
+                <div class="form-group">
+                    <label for="title">Title: </label><span class="required">*</span>
+                    <input type="text" class="form-control" id="title" placeholder="Title" required><br>
+                    <label for="description">Description: </label>
+                    <input type="text" class="form-control" id="description" placeholder="Description"><br>
+                    <label for="sub_date">Submission Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" id="sub_date" required><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('assignment2')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit_assignment3" style="display: none;">
+            <form class="add-form" id="assignment3_form" method="GET" onsubmit="alert('Assignment saved!');">
+                <br>
+                <h2>Editing Assignment 3</h2><br>
+                <div class="form-group">
+                    <label for="title">Title: </label><span class="required">*</span>
+                    <input type="text" class="form-control" id="title" placeholder="Title" required><br>
+                    <label for="description">Description: </label>
+                    <input type="text" class="form-control" id="description" placeholder="Description"><br>
+                    <label for="sub_date">Submission Date: </label><span class="required">*</span>
+                    <input type="date" class="form-control" id="sub_date" required><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('assignment3')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function edit(assignment) {
+        switch (assignment) {
+            case 'assignment1':
+                document.getElementById('edit_assignment1').style.display = "block";
+                break;
+            case 'assignment2':
+                document.getElementById('edit_assignment2').style.display = "block";
+                break;
+            case 'assignment3':
+                document.getElementById('edit_assignment3').style.display = "block";
+                break;
+        }
+    }
+
+    function cancel(assignmentEdit) {
+        switch (assignmentEdit) {
+            case 'assignment1':
+                document.getElementById('edit_assignment1').style.display = "none";
+                break;
+            case 'assignment2':
+                document.getElementById('edit_assignment2').style.display = "none";
+                break;
+            case 'assignment3':
+                document.getElementById('edit_assignment3').style.display = "none";
+                break;
+        }
+    }
+</script>
+
+</html>

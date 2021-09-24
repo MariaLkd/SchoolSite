@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Per Course</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+<script>
+    $.get("/navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("/footer.html", function (data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="container">
+        <h1>Students Per Course List</h1><br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Student</th>
+                    <th scope="col">Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="student1">Student1</th>
+                    <th id="course1">Course1</th>
+                    <th><button onclick="edit('student_per_course1')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="student2">Student2</th>
+                    <th id="course2">Course2</th>
+                    <th><button onclick="edit('student_per_course2')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="student3">Student3</th>
+                    <th id="course3">Course3</th>
+                    <th><button onclick="edit('student_per_course3')">edit</button></th>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="container h3" id="editform">
+            <div id="edit_student_per_course1" style="display: none;">
+                <form class="add-form" id="student_per_course1_form" method="GET">
+                    <br>
+                    <h2>Editing Student Per Course 1</h2><br>
+                    <div class="form-group">
+                        <label for="student">Student: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Student1</option>
+                            <option>Student2</option>
+                            <option>Student3</option>
+                        </select>
+                        <label for="course">Course: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Course1</option>
+                            <option>Course2</option>
+                            <option>Course3</option>
+                        </select><br>
+                        <button id="submit-button" type="submit" class="btn btn-primary" onclick="alert('Student per course saved!')">Save</button>
+                        <button id="cancel-button" class="btn btn-primary"
+                            onclick="cancel('student_per_course1')" type="button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="edit_student_per_course2" style="display: none;">
+                <form class="add-form" id="student_per_course2_form" method="GET">
+                    <br>
+                    <h2>Editing Student Per Course 2</h2><br>
+                    <div class="form-group">
+                        <label for="student">Student: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Student1</option>
+                            <option>Student2</option>
+                            <option>Student3</option>
+                        </select>
+                        <label for="course">Course: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Course1</option>
+                            <option>Course2</option>
+                            <option>Course3</option>
+                        </select><br>
+                        <button id="submit-button" type="submit" class="btn btn-primary" onclick="alert('Student per course saved!')">Save</button>
+                        <button id="cancel-button" class="btn btn-primary"
+                            onclick="cancel('student_per_course2')" type="button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="edit_student_per_course3" style="display: none;">
+                <form class="add-form" id="student_per_course3_form" method="GET">
+                    <br>
+                    <h2>Editing Student Per Course 3</h2><br>
+                    <div class="form-group">
+                        <label for="student">Student: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Student1</option>
+                            <option>Student2</option>
+                            <option>Student3</option>
+                        </select>
+                        <label for="course">Course: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Course1</option>
+                            <option>Course2</option>
+                            <option>Course3</option>
+                        </select><br>
+                        <button id="submit-button" type="submit" class="btn btn-primary" onclick="alert('Student per course saved!')">Save</button>
+                        <button id="cancel-button" class="btn btn-primary"
+                            onclick="cancel('student_per_course3')" type="button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function edit(studentPerCourse) {
+        switch (studentPerCourse) {
+            case 'student_per_course1':
+                document.getElementById('edit_student_per_course1').style.display = "block";
+                break;
+            case 'student_per_course2':
+                document.getElementById('edit_student_per_course2').style.display = "block";
+                break;
+            case 'student_per_course3':
+                document.getElementById('edit_student_per_course3').style.display = "block";
+                break;
+        }
+    }
+
+    function cancel(studentPerCourseEdit) {
+        switch (studentPerCourseEdit) {
+            case 'student_per_course1':
+                document.getElementById('edit_student_per_course1').style.display = "none";
+                break;
+            case 'student_per_course2':
+                document.getElementById('edit_student_per_course2').style.display = "none";
+                break;
+            case 'student_per_course3':
+                document.getElementById('edit_student_per_course3').style.display = "none";
+                break;
+        }
+    }
+</script>
+
+</html>

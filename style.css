@@ -1,0 +1,104 @@
+html {
+    background: #ffa500;
+}
+
+.bg-custom {
+    background-color: #97cbfb;
+    border-bottom: 3px solid #ffa500;
+    color: white;
+    align-items: right;
+    height: 195px;
+}
+
+.navbar {
+    color: black;
+}
+
+.logo-image {
+    max-width: 30%;
+}
+
+.header-image {
+    position: relative;
+    background-image: url('imgs/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header-image::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s ease;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+}
+
+#welcome {
+    opacity: 0;
+    transition: all 1s ease;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+}
+
+.header-image:hover::before {
+    transition: all 1s ease;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.header-image:hover #welcome {
+    transition: all 1s ease;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    filter: blur(0);
+    opacity: 1;
+}
+
+.font-weight-light, .lead {
+    color: white;
+}
+
+#contact_details {
+    display: inline;
+}
+
+footer {
+    background-color: #ffa500;
+}
+
+.required {
+    color: red;
+}
+
+.navbar {
+    position: relative;
+    top: auto;
+}
+
+.navbar .nav-item:hover .nav-link {
+    color: black;
+}
+
+.navbar .nav-item .dropdown-item:hover {
+    color: white;
+    background-color: rgb(238, 155, 0);
+}
+
+.dropdown-menu {
+    background-color: orange;
+}
+
+@media all and (min-width: 992px) {
+    .navbar .nav-item:hover .dropdown-menu {
+        display: block;
+        background-color: orange;
+    }
+    .navbar .nav-item .dropdown-menu {
+        display: none;
+    }
+    .navbar .nav-item .dropdown-menu {
+        margin-top: 0;
+    }
+}

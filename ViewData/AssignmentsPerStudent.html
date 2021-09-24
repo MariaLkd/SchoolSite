@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments Per Student</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+<script>
+    $.get("/navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("/footer.html", function (data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="container">
+        <h1>Assignments Per Student List</h1><br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Assignment</th>
+                    <th scope="col">Student</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="assignment1">Assignment1</th>
+                    <th id="student1">Student1</th>
+                    <th><button onclick="edit('assignment_per_student1')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="assignment2">Assignment2</th>
+                    <th id="student2">Student2</th>
+                    <th><button onclick="edit('assignment_per_student2')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="assignment3">Assignment3</th>
+                    <th id="student3">Student3</th>
+                    <th><button onclick="edit('assignment_per_student3')">edit</button></th>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="container h3" id="editform">
+            <div id="edit_assignment_per_student1" style="display: none;">
+                <form class="add-form" id="assignment_per_student1_form" method="GET">
+                    <br>
+                    <h2>Editing Assignment Per Student 1</h2><br>
+                    <div class="form-group">
+                        <label for="assignment">Assignment: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Assignment1</option>
+                            <option>Assignment2</option>
+                            <option>Assignment3</option>
+                        </select>
+                        <label for="student">Student: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Student1</option>
+                            <option>Student2</option>
+                            <option>Student3</option>
+                        </select><br>
+                        <button type="submit" class="btn btn-primary"
+                            onclick="alert('Assignment per student saved!')">Save</button>
+                        <button class="btn btn-primary" type="button" onclick="cancel('assignment_per_student1')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="edit_assignment_per_student2" style="display: none;">
+                <form class="add-form" id="assignment_per_student2_form" method="GET">
+                    <br>
+                    <h2>Editing Assignment Per Student 2</h2><br>
+                    <div class="form-group">
+                        <label for="assignment">Assignment: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Assignment1</option>
+                            <option>Assignment2</option>
+                            <option>Assignment3</option>
+                        </select>
+                        <label for="student">Student: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Student1</option>
+                            <option>Student2</option>
+                            <option>Student3</option>
+                        </select><br>
+                        <button type="submit" class="btn btn-primary"
+                            onclick="alert('Assignment per student saved!')">Save</button>
+                        <button class="btn btn-primary" type="button" onclick="cancel('assignment_per_student2')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="edit_assignment_per_student3" style="display: none;">
+                <form class="add-form" id="assignment_per_student3_form" method="GET">
+                    <br>
+                    <h2>Editing Assignment Per Student 3</h2><br>
+                    <div class="form-group">
+                        <label for="assignment">Assignment: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Assignment1</option>
+                            <option>Assignment2</option>
+                            <option>Assignment3</option>
+                        </select>
+                        <label for="student">Student: </label><span class="required">*</span>
+                        <select class="form-control" required>
+                            <option>Student1</option>
+                            <option>Student2</option>
+                            <option>Student3</option>
+                        </select><br>
+                        <button type="submit" class="btn btn-primary"
+                            onclick="alert('Assignment per student saved!')">Save</button>
+                        <button class="btn btn-primary" type="button" onclick="cancel('assignment_per_student3')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function edit(assignmentPerStudent) {
+        switch (assignmentPerStudent) {
+            case 'assignment_per_student1':
+                document.getElementById('edit_assignment_per_student1').style.display = "block";
+                break;
+            case 'assignment_per_student2':
+                document.getElementById('edit_assignment_per_student2').style.display = "block";
+                break;
+            case 'assignment_per_student3':
+                document.getElementById('edit_assignment_per_student3').style.display = "block";
+                break;
+        }
+    }
+
+    function cancel(assignmentPerStudentEdit) {
+        switch (assignmentPerStudentEdit) {
+            case 'assignment_per_student1':
+                document.getElementById('edit_assignment_per_student1').style.display = "none";
+                break;
+            case 'assignment_per_student2':
+                document.getElementById('edit_assignment_per_student2').style.display = "none";
+                break;
+            case 'assignment_per_student3':
+                document.getElementById('edit_assignment_per_student3').style.display = "none";
+                break;
+        }
+    }
+</script>
+
+</html>

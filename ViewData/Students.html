@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+<script>
+    $.get("/navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("/footer.html", function (data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <br>
+    <div class="container">
+        <h1>Students List</h1><br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Date Of Birth</th>
+                    <th scope="col">Tuition Fees</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="firstname1">Student1fName</th>
+                    <th id="lastname1">Student1lName</th>
+                    <th id="dob1">15/10/1993</th>
+                    <th id="tuitionfees1">2250</th>
+                    <th><button onclick="edit('student1')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="firstname2">Student2fName</th>
+                    <th id="lastname2">Student2lName</th>
+                    <th id="dob2">23/11/2000</th>
+                    <th id="tuitionfees2">2500</th>
+                    <th><button onclick="edit('student2')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="firstname3">Student3fName</th>
+                    <th id="lastname3">Student3lName</th>
+                    <th id="dob3">14/06/1990</th>
+                    <th id="tuitionfees3">2250</th>
+                    <th><button onclick="edit('student3')">edit</button></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container h3" id="editform">
+        <div id="edit_student1" style="display: none;">
+            <form class="add-form" id="student1_form" method="GET" onsubmit="alert('Student saved!');">
+                <br>
+                <h2>Editing Student 1</h2><br>
+                <div class="form-group">
+                    <label for="first_name">First Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required><br>
+                    <label for="last_name">Last Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required><br>
+                    <label for="dob">Date Of Birth: </label>
+                    <input type="date" class="form-control" name="dob"><br>
+                    <label for="tuition_fees">Tution fees: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="tuition_fees" placeholder="0000.00" required><br>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button class="btn btn-primary" onclick="cancel('student1')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit_student2" style="display: none;">
+            <form class="add-form" id="student2_form" method="GET" onsubmit="alert('Student saved!');">
+                <br>
+                <h2>Editing Student 2</h2><br>
+                <div class="form-group">
+                    <label for="first_name">First Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required><br>
+                    <label for="last_name">Last Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required><br>
+                    <label for="dob">Date Of Birth: </label>
+                    <input type="date" class="form-control" name="dob"><br>
+                    <label for="tuition_fees">Tution fees: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="tuition_fees" placeholder="0000.00" required><br>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button class="btn btn-primary" onclick="cancel('student2')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit_student3" style="display: none;">
+            <form class="add-form" id="student3_form" method="GET" onsubmit="alert('Student saved!');">
+                <br>
+                <h2>Editing Student 3</h2><br>
+                <div class="form-group">
+                    <label for="first_name">First Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required><br>
+                    <label for="last_name">Last Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required><br>
+                    <label for="dob">Date Of Birth: </label>
+                    <input type="date" class="form-control" name="dob"><br>
+                    <label for="tuition_fees">Tution fees: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="tuition_fees" placeholder="0000.00" required><br>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button class="btn btn-primary" onclick="cancel('student3')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function edit(student) {
+        switch (student) {
+            case 'student1':
+                document.getElementById('edit_student1').style.display = "block";
+                break;
+            case 'student2':
+                document.getElementById('edit_student2').style.display = "block";
+                break;
+            case 'student3':
+                document.getElementById('edit_student3').style.display = "block";
+                break;
+        }
+    }
+
+    function cancel(studentEdit) {
+        switch (studentEdit) {
+            case 'student1':
+                document.getElementById('edit_student1').style.display = "none";
+                break;
+            case 'student2':
+                document.getElementById('edit_student2').style.display = "none";
+                break;
+            case 'student3':
+                document.getElementById('edit_student3').style.display = "none";
+                break;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+<script>
+    $.get("/navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("/footer.html", function (data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="container h3">
+        <form class="add-form" id="new-student-form" method="GET" onsubmit="saveStudent()">
+            <br>
+            <h1>New Student</h1><br>
+            <div class="form-group">
+                <label for="first_name">First Name: </label><span class="required">*</span>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name"
+                    required><br>
+                <label for="last_name">Last Name: </label><span class="required">*</span>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name"
+                    required><br>
+                <label for="dob">Date Of Birth: </label>
+                <input type="date" class="form-control" name="dob" id="dob"><br>
+                <label for="tuition_fees">Tution fees: </label><span class="required">*</span>
+                <input type="text" class="form-control" name="tuition_fees" id="tuition_fees" placeholder="0000.00"
+                    required><br>
+                <button id="submit-button" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        function saveStudent(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const student = {
+            firstName: urlParams.get('first_name'),
+            lastName: urlParams.get('last_name'),
+            dob: urlParams.get('dob'),
+            tuition: urlParams.get('tuition_fees')
+        };
+        console.log(student);
+        alert('Student saved!');}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>School Database</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+
+<script>
+    $.get("navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("footer.html", function (data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <header class="masthead" id="header">
+        <div class="masthead header-image">
+            <div class="container h-100">
+                <div class="row headerImageFont align-items-center">
+                    <div class="col-12 text-center">
+                        <div class="welcome" id="welcome">
+                            <img src="imgs/logo.png" id="welcome-logo" alt="logo">
+                            <h1 class="font-weight-light">Welcome!</h1>
+                            <p class="lead" id="welcome-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Qui
+                                labore et, voluptatibus repellat ut voluptatum quaerat nostrum similique sapiente!
+                                Mollitia
+                                molestiae ducimus labore maxime officiis delectus fuga iure dicta modi. Lorem
+                                ipsum, dolor sit amet consectetur adipisicing elit. Quam itaque neque, nam quaerat ad
+                                animi
+                                dolorum dolores. Ratione, architecto? Consectetur illum blanditiis corporis dolor saepe
+                                sequi consequuntur eius quos et.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- <div class="jumbotron bgheader">
+        <div class="container">
+            <div class="row headerImageFont">
+                <div class="col-md-6">
+                    <h1>Best Quality of Wines</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum in 
+                        ipsum esse temporibus laborum tempore! Repudiandae itaque impedit ipsa animi 
+                        quo voluptas, nostrum sapiente exercitationem hic suscipit provident! Perferendis, ratione.
+                    </p>
+                    <button class="btn bg-custom">Read More</button>
+                </div>
+                <div class="col-md-6">
+                    <h1>Best Quality of Wines</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum in 
+                        ipsum esse temporibus laborum tempore! Repudiandae itaque impedit ipsa animi 
+                        quo voluptas, nostrum sapiente exercitationem hic suscipit provident! Perferendis, ratione.
+                    </p>
+                    <button class="btn bg-custom">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

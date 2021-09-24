@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+<script>
+    $.get("/navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+
+<script>
+    $.get("/footer.html", function (data) {
+        $("#footer-placeholder").replaceWith(data);
+    });
+</script>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <br>
+    <div class="container">
+        <h1>Trainers List</h1><br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="firstname1">Trainer1fName</th>
+                    <th id="lastname1">Trainer1lName</th>
+                    <th id="subject1">Subject1</th>
+                    <th><button onclick="edit('trainer1')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="firstname2">Trainer2fName</th>
+                    <th id="lastname2">Trainer2lName</th>
+                    <th id="subject2">Subject2</th>
+                    <th><button onclick="edit('trainer2')">edit</button></th>
+                </tr>
+                <tr>
+                    <th id="firstname3">Trainer3fName</th>
+                    <th id="lastname3">Trainer3lName</th>
+                    <th id="trainer3">Subject3</th>
+                    <th><button onclick="edit('trainer3')">edit</button></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container h3" id="editform">
+        <div id="edit_trainer1" style="display: none;">
+            <form class="add-form" id="trainer1_form" method="GET" onsubmit="alert('Trainer saved!');">
+                <br>
+                <h2>Editing Trainer 1</h2><br>
+                <div class="form-group">
+                    <label for="first_name">First Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required><br>
+                    <label for="last_name">Last Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required><br>
+                    <label for="subject">Subject: </label>
+                    <input type="text" class="form-control" name="subject"><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('trainer1')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit_trainer2" style="display: none;">
+            <form class="add-form" id="trainer2_form" method="GET" onsubmit="alert('Trainer saved!');">
+                <br>
+                <h2>Editing Trainer 2</h2><br>
+                <div class="form-group">
+                    <label for="first_name">First Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required><br>
+                    <label for="last_name">Last Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required><br>
+                    <label for="subject">Subject: </label>
+                    <input type="text" class="form-control" name="subject"><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('trainer2')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit_trainer3" style="display: none;">
+            <form class="add-form" id="trainer3_form" method="GET" onsubmit="alert('Trainer saved!');">
+                <br>
+                <h2>Editing Trainer 3</h2><br>
+                <div class="form-group">
+                    <label for="first_name">First Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required><br>
+                    <label for="last_name">Last Name: </label><span class="required">*</span>
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required><br>
+                    <label for="subject">Subject: </label>
+                    <input type="text" class="form-control" name="subject"><br>
+                    <button id="submit-button" type="submit" class="btn btn-primary">Save</button>
+                    <button id="cancel-button" class="btn btn-primary" onclick="cancel('trainer3')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function edit(trainer) {
+        switch (trainer) {
+            case 'trainer1':
+                document.getElementById('edit_trainer1').style.display = "block";
+                break;
+            case 'trainer2':
+                document.getElementById('edit_trainer2').style.display = "block";
+                break;
+            case 'trainer3':
+                document.getElementById('edit_trainer3').style.display = "block";
+                break;
+        }
+    }
+
+    function cancel(trainerEdit) {
+        switch (trainerEdit) {
+            case 'trainer1':
+                document.getElementById('edit_trainer1').style.display = "none";
+                break;
+            case 'trainer2':
+                document.getElementById('edit_trainer2').style.display = "none";
+                break;
+            case 'trainer3':
+                document.getElementById('edit_trainer3').style.display = "none";
+                break;
+        }
+    }
+</script>
+
+</html>
